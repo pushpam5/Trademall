@@ -1,0 +1,107 @@
+
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./assets/css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+<div class="inner_wrapper">
+
+        <div class="mar_cart ">
+        
+            <div class="row ">
+                <div class="col-md-12"><h2> Contact Us</h2><br> </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft" data-wow-delay=".2s">
+                
+                <p><b>Address:</b> <a href="#">101,Royal Ratan Tower Indore 452001 M.P.</a></p>
+            
+                    <p> <b>Phone: </b> <a href="#">+91-0000000000</a></p>
+                
+                    <p><b> Email:</b> <a href="#">info@trademall.com</a></p>        
+                
+                    <br>
+                     <iframe style="width:100%;" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d27789.752801659528!2d75.88403203128257!3d22.71793556903121!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1554971124585!5m2!1sen!2sin" width="600" height="350" frameborder="0" allowfullscreen=""></iframe>
+                    
+                </div>
+                <!-- contact form -->
+                <div class="details">
+                <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
+                    <form (submit)="OnSubmit(postform)" class="form-horizontal" id="contactform" name="contactform" data-toggle="validator" [formGroup]="form" #postform="ngForm">
+                        <!-- Name -->
+                        <!-- <div class="form-group label-floating">
+                        <label class="control-label" for="name">Name</label>
+                        <input class="form-control" id="name" type="text" name="name" required="" data-error="Please enter your name">
+                        <div class="help-block with-errors"></div>
+                        </div> -->
+                        <!-- email -->
+                        <div class="form-group label-floating">
+                        <label class="control-label" for="email">Email</label>
+                        <input class="form-control" id="email" type="email" name="email" required="" data-error="Please enter your Email" ngModel formControlName="email">
+                        <div class="help-block" *ngIf="(form.controls.email.errors?.required && form.controls.email.touched)||(validate==1)">Email is required</div>
+                        </div>
+                        <!-- Subject -->
+                        <div class="form-group label-floating">
+                        <label class="control-label">Subject</label>
+                        <input class="form-control" id="msg_subject" type="text" name="subject" required="" data-error="Please enter your message subject" ngModel formControlName="subject">
+                        <div class="help-block" *ngIf="(form.controls.subject.errors?.required && form.controls.subject.touched)||(validate==1)">Subject is required</div>
+                        </div>
+                        <!-- Message -->
+                        <div class="form-group label-floating">
+                            <label for="message" class="control-label">Message</label>
+                            <textarea class="form-control" rows="3" id="message" name="message" required="" data-error="Write your message" ngModel formControlName="message"></textarea>
+                            <div class="help-block" *ngIf="(form.controls.message.errors?.required && form.controls.message.touched)||(validate==1)">Message is required</div>
+                        </div>
+                        <!-- Form Submit -->
+                        <div class="form-submit mt-5">
+                            <button  class="btn btn-common" type="submit" id="form-submit"><i class="material-icons mdi mdi-message-outline"></i> Send Message</button>
+                            <div id="msgSubmit" class="h3 text-center hidden"></div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="review_rat">
+        
+          <!--   <ul class="nav nav-tabs" id="myTab" role="tablist">
+        
+                <li class="nav-item">
+        
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="http://trademall.in/" role="tab" aria-controls="home" aria-selected="true">Home</a>
+        
+                </li>
+        
+                <li class="nav-item">
+        
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://trademall.in/Rules/about_us" role="tab" aria-controls="profile" aria-selected="false">About Us</a>
+        
+                </li>
+        
+                <li class="nav-item">
+        
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="http://trademall.in/Rules/contact_us" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+        
+                </li>
+        
+            </ul> -->
+        
+            <div class="tab-content" id="myTabContent">
+        
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+        
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+        
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+        
+            </div>
+        
+        </div>
+        
+        

@@ -1,0 +1,280 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./assets/css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+<div class="contener">
+        <div class="inner_wrapper">
+        <div class="check_out">
+                      <div class="col-md-9">
+                         <div class="panel-group" id="accordion">
+                            <div *ngIf="onLoggedIn()" class="panel panel-default">
+                               <div class="panel-heading">
+                                  <h4 class="panel-title">
+                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                     Login or Signup</a>
+                                  </h4>
+                               </div>
+                               <div id="collapse1" class="panel-collapse collapse">
+                                  <div class="panel-body">
+                                     <form   (submit)="logonSubmit(postform)" [formGroup]="loginform"  #postform="ngForm">
+                                        <div class="col-md-4">
+                                           <div class="form-group" [ngClass]="displayFieldCss('email')">
+                              
+                                              <input placeholder="Email" type="text" class="form-control" formControlName="email" id="email" name="email"  ngModel required>
+                                              <app-field-error-display 
+                                                [displayError]="isFieldValid('email')" 
+                                             errorMsg="Please inform your email">
+                                             </app-field-error-display>
+                              `          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                           <div class="form-group" [ngClass]="displayFieldCss('password')">
+                                              <input placeholder="Password" type="password" class="form-control" formControlName="password" name="password" id="password" ngModel required>
+                                             <app-field-error-display                                          
+                                              [displayError]="isFieldValid('password')" 
+                                              errorMsg="Please inform your password">
+                                              </app-field-error-display>
+                                             </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                           <button type="submit" class="btn btn-primary ">Submit</button>
+                                        </div>
+                                       </form>
+                                        <div class="clearfix"></div>
+                                        <hr>
+                                        <div class="col-md-12 text-center">
+                                           <a href="#" class="forgot-password">
+                                           <b>Forgot the password?</b>
+                                           </a>
+                                           <p>Don't have an account? <a routerLink="/Signup"><b>Sign Up here</b></a></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                     
+                                  </div>
+                               </div>
+                            </div>
+                            <div class="panel panel-default">
+                               <div class="panel-heading">
+                                  <h4 class="panel-title">
+                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                     Delivery Address</a>
+                                  </h4>
+                               </div>
+                               <div id="collapse2" class="panel-collapse collapse">
+                                  <div class="panel-body">
+                                     <h4 class="mb-3">Billing address</h4>
+                                     <form (submit)="deladdonSubmit(post)" [formGroup]="deladdform"  #post="ngForm">
+                  
+                                           <div class="col-md-6">
+                                              <div class="form-group" [ngClass]="displaydelFieldCss('firstname')">
+                                              <label for="firstname">First name</label>
+                                              <input type="text" class="form-control" id="firstname" name="firstname"  formControlName="firstname" placeholder="First Name" ngModel required>
+                                              <app-field-error-display                                          
+                                           [displayError]="isdelFieldValid('firstname')" 
+                                           errorMsg="Please inform your First Name">
+                                           </app-field-error-display>   
+                                           </div>
+                                          </div>
+                                          
+                                           <div class="col-md-6" >
+                                                <div class="form-group" [ngClass]="displaydelFieldCss('lastname')">
+                                              <label for="lastName">Last name</label>
+                                              <input type="text" class="form-control" id="lastName" name="lastname" ngModel formControlName="lastname" placeholder="Last Name" required>
+                                              <app-field-error-display                                          
+                                              [displayError]="isdelFieldValid('lastname')" 
+                                              errorMsg="Please inform your Last Name">
+                                              </app-field-error-display>
+                                           </div>
+                                           </div>
+
+
+                                        <div class="col-md-12">
+                                             <div class="form-group" [ngClass]="displaydelFieldCss('email')">
+                                           <label for="email">Email</label>
+                                           <input type="email" class="form-control" id="Email" name="Email" ngModel formControlName="email" placeholder="you@example.com">
+                                           <app-field-error-display                                          
+                                           [displayError]="isdelFieldValid('email')" 
+                                           errorMsg="Please inform your Email">
+                                           </app-field-error-display>
+                                        </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                             <div class="form-group" [ngClass]="displaydelFieldCss('address')">
+                                           <label for="address">Address</label>
+                                           <input type="text" class="form-control" id="address" name="address" ngModel formControlName="address" placeholder="1234 Main St" required>
+                                           <app-field-error-display                                          
+                                           [displayError]="isdelFieldValid('address')" 
+                                           errorMsg="Please inform your Address">
+                                           </app-field-error-display>
+                                        </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                           <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                                           <input type="text" class="form-control" id="address2" name="address2" placeholder="Apartment or suite">
+                                        </div>
+                                    
+                                        <div class="row">
+                                             <div class="col-md-6" id="country">
+                                                   <div class="form-group" [ngClass]="displaydelFieldCss('country')">
+                                                   <label id="inf"for="country">Country</label>
+                                                   <select class="custom-select d-block w-100" ngModel formControlName="country" id="country" (change)="selectCountry($event)" required>
+                                                   
+                                                      
+                                                      <option value="">Choose...</option>
+                                                
+                                                      <option *ngFor="let country of coudetails[0]" [value]="country._id">{{country.name}}</option>
+                                          
+                                                   </select>
+                                                   <app-field-error-display                                          
+                                                   [displayError]="isdelFieldValid('country')" 
+                                                   errorMsg="Please inform your Country">
+                                                   </app-field-error-display>
+                                                </div>
+                                             </div>
+                                           <div class="col-md-6">
+                                                <div class="form-group" [ngClass]="displaydelFieldCss('state')">
+                                              <label id="inf" for="state">State</label>
+                                              <select class="custom-select d-block w-100" ngModel formControlName="state" id="state" (change)="selectState($event)" required>
+                                                 <option value="">Choose...</option>
+                                                 <option *ngFor="let state of details[0]" [value]="state._id">{{state.name}}</option>
+                                              </select>
+                                              <app-field-error-display                                          
+                                              [displayError]="isdelFieldValid('state')" 
+                                              errorMsg="Please inform your State">
+                                              </app-field-error-display>
+                                           </div>
+                                           </div>
+                                           <div class="col-md-4 mb-3">
+                                                <div class="form-group" [ngClass]="displaydelFieldCss('city')">
+                                              <label id="inf" for="city">City</label>
+                                              <select class="custom-select d-block w-100" ngModel formControlName="city" id="city" name="state" required>
+                                                 <option value="">Choose...</option>
+                                                 <option *ngFor="let city of citdetails[0]" [value]="city._id">{{city.name}}</option>
+                                                 
+                                              </select>
+                                              <app-field-error-display                                          
+                                              [displayError]="isdelFieldValid('city')" 
+                                              errorMsg="Please inform your city">
+                                              </app-field-error-display>
+                                           </div>
+                                           </div>
+
+                                           <div class="col-md-12 mb-3">
+                                                <div class="form-group" [ngClass]="displaydelFieldCss('zip')">
+
+                                              <label id="code" for="zip">Zip</label>
+
+                                              <input type="text" class="form-control" id="zip" name="zip" formControlName="zip" ngModel required>
+                                              <app-field-error-display                                          
+                                              [displayError]="isdelFieldValid('zip')" 
+                                              errorMsg="Please inform your ZipCode">
+                                              </app-field-error-display>
+                                           </div>
+                                           </div>
+
+                                        </div>
+                                    
+                                        <button type="submit" class="btn btn-primary" style="margin-bottom:10px;" >Save and Deliver Here</button>
+                                       </form>
+                                       
+                                        <button type="button" class="btn btn-secondary  ">Cancel</button>
+                                     
+                                  </div>
+                               </div>
+                            </div>
+                            <div class="panel panel-default">
+                               <div class="panel-heading">
+                                  <h4 class="panel-title">
+                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                     Payment</a>
+                                  </h4>
+                               </div>
+                               <div id="collapse3" class="panel-collapse collapse">
+                                  <div class="panel-body">
+                                     <form style="max-width:600px;">
+                                        <h4 class="mb-3">Payment</h4>
+                                        <div class="payment_opton my-3">
+                                           <p><input type="radio" name="payment_option" required/> Cash on Delivery</p>
+                                           <p><input type="radio" name="payment_option" required/> Credit Card</p>
+                                           <p><input type="radio" name="payment_option" required/> Debit Card</p>
+                                        </div>
+                                        <div class="row">
+                                           <div class="col-md-6 mb-3">
+                                              <label for="cc-name">Name on card</label>
+                                              <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                                              <small class="text-muted">Full name as displayed on card</small>
+                                             
+                                           </div>
+                                           <div class="col-md-6 mb-3">
+                                              <label for="cc-number">Credit card number</label>
+                                              <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                                             
+                                           </div>
+                                        </div>
+                                        <div class="row">
+                                           <div class="col-md-3 mb-3">
+                                              <label for="cc-expiration">Expiration</label>
+                                              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                                              <div class="invalid-feedback">
+                                                 Expiration date required
+                                              </div>
+                                           </div>
+                                           <div class="col-md-3 mb-3">
+                                              <label for="cc-expiration">CVV</label>
+                                              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                                              <div class="invalid-feedback">
+                                                 Security code required
+                                              </div>
+                                           </div>
+                                           <div class="col-md-12 mb-3">
+                                              <input type="radio">Save The Details For Faster Checkout 
+                                           </div>
+                                        </div>
+                                        <hr class="mb-4 mb-3 ">
+                                        <button class="btn btn-primary btn-lg btn-block" id="checklink" type="submit"><a style="color:white;" routerLink="/order-details">Continue to checkout</a></button>
+                                     </form>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>   
+                      <div class="col-md-3">
+                          <div class="left_cart">
+                                <div class="shopping-cart-header">
+                                  <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
+                                  <div class="shopping-cart-total">
+                                    <span class="lighter-text">Total:</span>
+                                    <span class="main-color-text">$2,229.97</span>
+                                  </div>
+                                </div> 
+    
+                                <ul class="shopping-cart-items">
+                                  <li class="clearfix">
+                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1" />
+                                    <span class="item-name">Sony DSC-RX100M III</span>
+                                    <span class="item-price">$849.99</span>
+                                    <span class="item-quantity">Quantity: 01</span>
+                                  </li>
+    
+                                  <li class="clearfix">
+                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
+                                    <span class="item-name">KS Automatic Mechanic...</span>
+                                    <span class="item-price">$1,249.99</span>
+                                    <span class="item-quantity">Quantity: 01</span>
+                                  </li>
+    
+                                  <li class="clearfix">
+                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg" alt="item1" />
+                                    <span class="item-name">Kindle, 6" Glare-Free To...</span>
+                                    <span class="item-price">$129.99</span>
+                                    <span class="item-quantity">Quantity: 01</span>
+                                  </li>
+                                </ul> 
+                                    <hr>
+                                <!-- <button class="btn btn-info pull-right"><a>Checkout</a></button> -->
+                              </div> 
+                      </div>
+                   </div>
+                   </div>
+        </div>

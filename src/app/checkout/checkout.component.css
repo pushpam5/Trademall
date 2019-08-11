@@ -1,0 +1,34 @@
+.row{
+    margin-top:15px ;
+}
+.mb-3{
+    margin-top:15px ;
+}
+.btn btn-primary btn-lg btn-block a{
+    color:white;
+}
+.control-label.required:after{ 
+    color: #d00;
+    content: "*";
+    position: absolute;
+    margin-left: 5px;
+    top:7px;
+  }
+  form.submitted .ng-invalid
+  {
+      border:1px solid #f00;
+  }
+  #zipcode{
+        width:276px;
+        margin-top: -57px;
+        margin-left: 72px;
+        padding-bottom: 20px;
+  }
+  #country{
+      margin-bottom: 10px;
+  }
+  #inf{
+      padding: 10px;
+  }
+
+ 

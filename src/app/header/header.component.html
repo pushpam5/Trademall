@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Trade Mall</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./assets/css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+<body>
+<div class="wrapper">
+	<header >
+		<div class="hed_top">
+			<div class="inner_wrapper">
+		
+				<div class="col-md-6">
+					<ul class="socila">
+						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+						<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+				</div>
+				<div class="col-md-6">
+					<ul class="top_right">
+						<li><a href="#">Home </a></li>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Contact Us</a></li>
+						<li><a routerLink="login">Login</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="hed_center">
+			<div class="inner_wrapper">
+			
+				<div class="col-md-2">
+					<img class="logo" src="./assets/images/logo.png" alt="logo"/>
+				</div>
+				<div class="col-md-6">
+					<ul class="info_box">
+						<li>
+							<table>
+								<tr>
+									<td><i class="fas fa-shipping-fast"></i></td>
+									<td>Free Shipping On All Products</td>
+								</tr>
+							</table>
+						</li>
+						<li>
+							<table>
+								<tr>
+									<td><i class="fas fa-money-check-alt"></i></td>
+									<td>Money Back Guarantee</td>
+								</tr>
+							</table>
+						</li>
+						<li>
+							<table>
+								<tr>
+									<td><i class="fas fa-gifts"></i></td>
+									<td>Special weekly Offer</td>
+								</tr>
+							</table>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<div class="cart">
+						<table>
+							<tr>
+								<td><h2 class="call_text"><i class="fas fa-headset"></i> : 00 0000 000</h2></td>
+								<td>
+								<ul class="navbar-right card_box">
+						
+								  <li><a href="#" id="cart"><i class="fa fa-shopping-cart"></i> Cart <span class="badge">3</span></a></li>
+								</ul> <!--end navbar-right -->
+								</td>
+							</tr>
+						</table>
+						
+						
+						 <div class="shopping-cart" style="display:none;">
+							<div class="shopping-cart-header">
+							  <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
+							  <div class="shopping-cart-total">
+								<span class="lighter-text">Total:</span>
+								<span class="main-color-text">$2,229.97</span>
+							  </div>
+							</div> <!--end shopping-cart-header -->
+
+							<ul class="shopping-cart-items">
+							  <li class="clearfix">
+								<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1" />
+								<span class="item-name">Sony DSC-RX100M III</span>
+								<span class="item-price">$849.99</span>
+								<span class="item-quantity">Quantity: 01</span>
+							  </li>
+
+							  <li class="clearfix">
+								<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
+								<span class="item-name">KS Automatic Mechanic...</span>
+								<span class="item-price">$1,249.99</span>
+								<span class="item-quantity">Quantity: 01</span>
+							  </li>
+
+							  <li class="clearfix">
+								<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg" alt="item1" />
+								<span class="item-name">Kindle, 6" Glare-Free To...</span>
+								<span class="item-price">$129.99</span>
+								<span class="item-quantity">Quantity: 01</span>
+							  </li>
+							</ul>
+
+							<a href="#" class="button">Checkout</a>
+						  </div> <!--end shopping-cart -->
+  
+					</div>
+					<div class="search">
+						<form>
+						  <div class="input-group">
+							<input type="text" class="form-control" placeholder="Search">
+							<div class="input-group-btn">
+							  <button class="btn btn-default" type="submit">
+								<i class="fas fa-search"></i>
+							  </button>
+							</div>
+						  </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="inner_wrapper">
+			<div class="menu_top">
+				<div class="navbar navbar-default" role="navigation">
+					
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							
+						</div>
+						<div class="collapse navbar-collapse">
+							
+							<ul class="nav navbar-nav">
+								
+								<li>
+									<a href="#" class="dropdown-toggle categories" data-toggle="dropdown">Categories<b class="caret"></b></a>
+									<ul id="op_menu"class="dropdown-menu multi-level categories_sub">
+										<li><a href="#">Books and Media</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li><a href="#">Another action</a></li>
+										<li class="dropdown-submenu">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">Clothing</a>
+											<ul class="dropdown-menu">
+												<li><a href="#">Baby and Kids</a></li>
+												<li class="dropdown-submenu">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown">Baby and Kids</a>
+													<ul class="dropdown-menu">
+														<li class="dropdown-submenu">
+															<a href="#" class="dropdown-toggle" data-toggle="dropdown">Baby and Kids</a>
+															<ul class="dropdown-menu">
+																<li><a href="#">Action</a></li>
+																
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="dropdown-submenu">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">Kids</a>
+											<ul class="dropdown-menu">
+												<li><a href="#">Baby and Kids</a></li>
+												<li class="dropdown-submenu">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown">Baby and Kids</a>
+													<ul class="dropdown-menu">
+														<li class="dropdown-submenu">
+															<a href="#" class="dropdown-toggle" data-toggle="dropdown">Baby and Kids</a>
+															<ul class="dropdown-menu">
+																<li><a href="#">Action</a></li>
+																
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="dropdown-submenu">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">Action</a>
+											<ul class="dropdown-menu">
+												<li><a href="#">Baby and Kids</a></li>
+												<li class="dropdown-submenu">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown">Baby and Kids</a>
+													<ul class="dropdown-menu">
+														<li class="dropdown-submenu">
+															<a href="#" class="dropdown-toggle" data-toggle="dropdown">Baby and Kids</a>
+															<ul class="dropdown-menu">
+																<li><a href="#">Action</a></li>
+																
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="dropdown-submenu">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">Baby and Kids</a>
+											<ul class="dropdown-menu">
+												<li><a href="#">Baby and Kids</a></li>
+												<li class="dropdown-submenu">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown">Baby and Kids</a>
+													<ul class="dropdown-menu">
+														<li class="dropdown-submenu">
+															<a href="#" class="dropdown-toggle" data-toggle="dropdown">Baby and Kids</a>
+															<ul class="dropdown-menu">
+																<li><a href="#">Action</a></li>
+																
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="dropdown-submenu">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">Clothing</a>
+											<ul class="dropdown-menu">
+												<li><a href="#">Baby and Kids</a></li>
+												<li class="dropdown-submenu">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown">Baby and Kids</a>
+													<ul class="dropdown-menu">
+														<li class="dropdown-submenu">
+															<a href="#" class="dropdown-toggle" data-toggle="dropdown">Baby and Kids</a>
+															<ul class="dropdown-menu">
+																<li><a href="#">Action</a></li>
+																
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										
+										
+									</ul>
+								</li>
+								<li><a href="#">Home </a></li>
+								<li><a href="#">About US </a></li>
+								<li><a href="#">Contact Us </a></li>
+							</ul>
+						</div><!--/.nav-collapse -->
+				
+				</div>
+		
+			</div>
+		</div>
+	</header>
+	</div>
+</body>
+</html>

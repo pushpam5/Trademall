@@ -1,0 +1,128 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="./assets/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+
+
+<div class="contener">
+        <div class="inner_wrapper">
+            <div id="first">
+                    <div class="myform form">
+                         <div class="mb-3">
+                             <div class="col-md-12 text-center">
+                                <img class="logo_sign" src="./assets/images/logo.png" alt=""/>
+                                <h3>Signup here</h3>
+                             </div>
+                   </div>
+
+<form (submit)="onSubmit(post)"  class="form-horizontal" [formGroup]="form"  #post="ngForm">
+
+        <div class="form-group" [ngClass]="displayFieldCss('name')">
+          <div class="col-sm-12">
+            <label for="name" class="control-label required">Name</label>
+            <input type="text" id="name" class="form-control" name="name" ngModel formControlName="name">
+            <app-field-error-display 
+              [displayError]="isFieldValid('name')" 
+              errorMsg="Please inform your name">
+            </app-field-error-display>
+          </div>
+        </div>
+      
+        <div class="form-group"  [ngClass]="displayFieldCss('email')">
+          <div class="col-sm-12">
+            <label for="email" class="control-label required">Email</label>
+            <input type="text" id="email" name="email" ngModel class="form-control" formControlName="email">
+            <app-field-error-display 
+              [displayError]="isFieldValid('email')" 
+              errorMsg="Please inform your email">
+            </app-field-error-display>
+          </div>
+        </div>
+      
+        <!-- <div formGroupName="address" >
+          <div class="form-group">
+            <div class="col-md-6" [ngClass]="displayFieldCss('address.street')" >
+              <label for="street" class="control-label required">Address</label>
+              <input type="text" id="street" class="form-control" formControlName="street">
+               <app-field-error-display 
+                [displayError]="isFieldValid('address.street')" 
+                errorMsg="Please inform your address">
+              </app-field-error-display>
+            </div>
+      
+            <div class="col-md-3">
+              <label for="street2" class="control-label">Address 2</label>
+              <input type="text" id="street2" class="form-control" formControlName="street2">
+            </div>
+      
+            <div class="col-md-3"  [ngClass]="displayFieldCss('address.zipCode')" >
+              <label for="zipCode" class="control-label required">Zip Code</label>
+              <input type="text" id="zipCode" class="form-control" formControlName="zipCode">
+              <app-field-error-display 
+                [displayError]="isFieldValid('address.zipCode')" 
+                errorMsg="Please inform your zip code">
+              </app-field-error-display>
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <div class="col-md-4" [ngClass]="displayFieldCss('address.city')" >
+              <label for="city" class="control-label required">City</label>
+              <input type="text" id="city" class="form-control" formControlName="city">
+              <app-field-error-display 
+                [displayError]="isFieldValid('address.city')" 
+                errorMsg="Please inform your city">
+              </app-field-error-display>
+            </div>
+      
+            <div class="col-md-4" [ngClass]="displayFieldCss('address.state')">
+              <label for="state" class="control-label required">State / Province / Region</label>
+              <input type="text" id="state" class="form-control" formControlName="state">
+              <app-field-error-display 
+                [displayError]="isFieldValid('address.state')" 
+                errorMsg="Please inform your state">
+              </app-field-error-display>
+            </div>-->
+            <div class="form-group"  [ngClass]="displayFieldCss('country')">
+            <div class="col-md-4" > 
+              <label for="country" class="control-label required">Country</label>
+              <input type="text" id="country" name="country" ngModel class="form-control" formControlName="country" autocomplete="off">
+               <app-field-error-display 
+                [displayError]="isFieldValid('country')" 
+                errorMsg="Please inform your country">
+              </app-field-error-display>
+            </div> 
+        </div>
+        <div class="form-group"  [ngClass]="displayFieldCss('password')">
+        <div class="col-md-4" > 
+                <label for="password" class="control-label required">Password</label>
+                <input type="password" id="password" name="password" ngModel class="form-control" formControlName="password">
+                 <app-field-error-display 
+                  [displayError]="isFieldValid('password')"
+                  errorMsg="Please enter Password">
+                </app-field-error-display>
+        </div>
+        </div>
+        <div class="form-group"  [ngClass]="displayFieldCss('confirmpassword')">
+                <div class="col-md-4" > 
+                        <label for="confirmpassword" class="control-label required">Confirm Password</label>
+                        <input type="password" id="confirmpassword" class="form-control" formControlName="confirmpassword">
+                         <app-field-error-display 
+                          [displayError]="isFieldValid('confirmpassword')"
+                          errorMsg="Please enter Password">
+                        </app-field-error-display>
+                </div>
+                </div>
+
+    
+
+        <button class="btn btn-primary">Submit</button>
+        
+    
+        <div class="clearfix"></div>
+        </form>
+        <button class="btn" (click)="reset()" id="submit">Reset</button>
+</div>
+
+

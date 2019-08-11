@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="./assets/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+<div class="contener">
+	<div class="inner_wrapper">
+		<div id="first">
+				<div class="myform form">
+					 <div class="mb-3">
+						 <div class="col-md-12 text-center">
+							<img class="logo_sign" src="./assets/images/logo.png" alt=""/>
+							<h3>Login here</h3>
+						 </div>
+               </div>
+               <form (submit)="onSubmit(post)" class="form-horizontal" [formGroup]="form" #post="ngForm" >
+                     <div class="form-group"  [ngClass]="displayFieldCss('email')">
+                           <label for="email" class="control-label">Email</label>
+                        <input type="text" class="form-control" id="email"  name="email"  formControlName="email" ngModel placeholder="Email" >
+                     </div>
+                     <app-field-error-display 
+                     [displayError]="isFieldValid('email')"
+                     errorMsg="Please enter Email">
+                     </app-field-error-display>
+                     <div class="form-group" [ngClass]="displayFieldCss('password')">
+                           
+                        <label for="password" class="control-label">Password</label>
+                        <input type="password" id="password"  class="form-control" formControlName="password" name="password" ngModel placeholder="Password" >
+                     </div>
+                     <app-field-error-display
+                     [displayError]="isFieldValid('password')"
+                     errorMsg="Please Enter Password">
+                  </app-field-error-display>
+                     <!-- <div class="form-group">
+                        <p><input type="checkbox" required/> By signing up you accept our <a href="#">Terms Of Use</a></p>
+                     </div> -->
+                     <div class="col-md-12 text-center ">
+                        <button type="submit" class="btn btn-default" >Login Now</button>
+                     </div>
+                  </form>
+                  <!-- <p>Login or Register with:</p>
+
+                  <a (click)="googleLogin()" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a> -->
+          
+              
+                     <div class="form-group bottom_login">
+                        <p class="text-center">Don't have account? <a routerLink="/Signup">Sign up here</a></p>
+                     </div>
+               <div class="clearfix"></div>
+            
+				</div>
+			</div>
+	</div>
+</div>

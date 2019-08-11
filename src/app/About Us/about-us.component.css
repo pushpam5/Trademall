@@ -1,0 +1,10 @@
+
+.container{
+    width: 100%;
+    float: left;
+    margin-bottom: 40px;
+}
+.container p{
+    line-height: 33px;
+    font:  sans-serif;
+}
