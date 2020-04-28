@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "@ng-bootstrap/ng-bootstrap": "^5.1.0",
-    "angular": "^1.7.8",
+    "angular": "^1.7.9",
     "angular-bootstrap-md": "^7.5.4",
     "angular-notifier": "0.0.0",
     "core-js": "^2.5.4",
